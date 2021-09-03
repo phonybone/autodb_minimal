@@ -7,7 +7,7 @@ Create Date: 2021-09-02 21:28:55.365065
 """
 from alembic import op
 import sqlalchemy as sa
-from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy.dialects.postgresql import UUID, JSONB
 
 # revision identifiers, used by Alembic.
 revision = '7ff3939d33d3'
@@ -35,6 +35,7 @@ def upgrade():
                     sa.Column('routing_provider', sa.String(), nullable=False),
                     sa.Column('max_alert_grade', sa.Integer()),
                     sa.Column('allowable_minuts_late', sa.Integer()),
+                    sa.Column('config', JSONB()),
                     )
     op.create_index('idx_account_code', 'account', ['code'], unique=True)
 
