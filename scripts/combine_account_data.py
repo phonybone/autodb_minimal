@@ -2,6 +2,7 @@
 # coding: utf-8
 '''
 Combine the MP and RTB account data (assumes both are in json)
+Output is also json.
 '''
 
 import sys
@@ -30,7 +31,7 @@ def main(mp_data_fn, rtb_data_fn):
     with open(fn, "w") as output:
         print(json.dumps(rtb_data, indent=4), file=output)
         print(F"{fn} written")
-        
+
 if __name__ == '__main__':
     try:
         mp_data_fn = sys.argv[1]
@@ -38,7 +39,6 @@ if __name__ == '__main__':
     except IndexError:
         print("usage: combine_account_data.py <mp_data_fn> <rtb_data_fn>")
         sys.exit(1)
-        
-    main(mp_data_fn, rtb_data_fn)
 
+    main(mp_data_fn, rtb_data_fn)
 
