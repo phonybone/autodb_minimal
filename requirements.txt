@@ -1,0 +1,1 @@
+git+https://gitlab.com/phonybone/autodb.git@as_library
