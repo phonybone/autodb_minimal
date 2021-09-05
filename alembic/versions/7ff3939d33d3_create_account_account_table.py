@@ -33,8 +33,8 @@ def upgrade():
                               server_default=sa.text("uuid_generate_v4()")),
                     sa.Column('etl_running', sa.Boolean(), nullable=False, default=False),
                     sa.Column('routing_provider', sa.String(), nullable=False),
-                    sa.Column('max_alert_grade', sa.Integer()),
-                    sa.Column('allowable_minuts_late', sa.Integer()),
+                    sa.Column('max_alert_grade', sa.String()),
+                    sa.Column('allowable_minutes_late', sa.Integer()),
                     sa.Column('config', JSONB()),
                     )
     op.create_index('idx_account_code', 'account', ['code'], unique=True)
