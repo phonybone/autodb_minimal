@@ -6,7 +6,7 @@ from flask_restplus import Api
 from autodb.database import import_tables, get_conn, close_conn
 from autodb.database.table2ns import make_namespace
 
-from account_api.logger import log
+from .logger import log
 
 
 def initialize_autodb(app, conn, skip_tables=None):
