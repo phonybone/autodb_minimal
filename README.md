@@ -19,4 +19,4 @@ alembic revision -m '<create new table(s)>'
 
 ## Run
 scripts/run_local.sh
-
+http://localhost:5000 should show swagger page
