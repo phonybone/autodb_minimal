@@ -7,6 +7,7 @@ create new (empty) repo in github or gitlab with name of new project
 cd $NEW_PROJECT_NAME  
 git remote set-url origin $(git r-url | sed s/autodb_minimal/$NEW_PROJECT_NAME/)  
 git push -u origin master  
+mv account_api $NEW_PROJECT_NAME
 
 ## Create virtualenv
 Use your method of choice.  
