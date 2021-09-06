@@ -16,7 +16,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 
 name = 'account_api'
-description = 'Alembic -> REST Api Utility'
+description = 'Account Management Tool for PIS/DRS ETL'
 url = 'https://github.com/phonybone/'+name
 mg = re.match(r'(.*) <([^>]+)>', author_info)
 author = mg.group(1)
