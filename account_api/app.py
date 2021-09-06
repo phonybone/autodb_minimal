@@ -12,6 +12,7 @@ from account_api.logger import log
 def initialize_autodb(app, conn, skip_tables=None):
     if skip_tables is None:
         skip_tables = set()
+    skip_tables.add('alembic_version')
 
     app.sqla = SQLAlchemy(app)
 
@@ -20,6 +21,7 @@ def initialize_autodb(app, conn, skip_tables=None):
     log.info(F"got {len(tables)} tables")
     for tname, table in tables.items():
         if tname in skip_tables:
+            log.info(F"skipping {tname}")
             continue
         make_namespace(api, table, conn)
 
